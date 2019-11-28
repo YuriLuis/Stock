@@ -6,7 +6,7 @@ public class Produto {
     private float preco, qtd;
 
     public Produto(String nome, String descricao,
-                   float preco, float qtd){
+                   float preco, float qtd) {
 
         this.nome = nome;
         this.descricao = descricao;
@@ -14,16 +14,16 @@ public class Produto {
         this.qtd = qtd;
     }
 
-    public Produto(){
+    public Produto() {
 
     }
 
-    public void diminuirQtd(float qtd){
+    public void diminuirQtd(float qtd) {
 
         this.qtd -= qtd;
     }
 
-    public void addQtd(int qtd){
+    public void addQtd(int qtd) {
 
         this.qtd += qtd;
     }
@@ -56,7 +56,4 @@ public class Produto {
         return qtd;
     }
 
-    public void setQtd(float qtd) {
-        this.qtd = qtd;
-    }
 }

@@ -17,6 +17,16 @@ public class Item {
 
     }
 
+    public boolean verificaQtdEstoque(float qtd){
+
+        if (qtd  <= p.getQtd()){
+
+            return true;
+        }
+
+        return false;
+    }
+
     public void retirarDoEstoque(){
 
         p.diminuirQtd(qtd);
