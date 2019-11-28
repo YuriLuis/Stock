@@ -10,6 +10,9 @@ public class RegistrosProduto implements Registros {
    private RegistrosProduto(){
 
        produtos = new ArrayList<Produto>();
+
+       produtos.add(new Produto("produto1", "descricao1", 5.0f, 10.0f));
+       produtos.add(new Produto("produto2", "descricao2", 3.0f, 5.0f));
    }
 
    public static RegistrosProduto getRegistrosProduto(){
