@@ -46,6 +46,8 @@ public class TelaVendedor extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 alert();
+                nomeVendedor.setText("");
+                senha.setText("");
             }
 
         });
@@ -54,7 +56,7 @@ public class TelaVendedor extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                senha.setVisibility(View.GONE);
+
             }
 
         });
