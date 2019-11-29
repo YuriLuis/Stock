@@ -1,4 +1,4 @@
-package com.example.stock.ui.login;
+package com.example.stock;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -77,8 +77,6 @@ public class TelaCadastro extends AppCompatActivity {
         txtPrice = findViewById(R.id.txtPrice);
         txtDesc = findViewById(R.id.txtDesc);
         txtQtd = findViewById(R.id.txtQtd);
-        rp = findViewById()
-
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
