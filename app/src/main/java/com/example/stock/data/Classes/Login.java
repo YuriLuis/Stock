@@ -22,7 +22,7 @@ public class Login {
             v = auxVendedores.get(i);
 
             if (v.getNome().equalsIgnoreCase(nome) &&
-                    v.getSenha().equalsIgnoreCase(senha))
+                    v.getSenha().equals(senha))
 
                 return i;
 
