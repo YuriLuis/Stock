@@ -26,6 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.stock.R;
+import com.example.stock.TelaPrincipal;
 import com.example.stock.data.Classes.Login;
 import com.example.stock.data.Classes.RegistrosVendedor;
 import com.example.stock.ui.login.LoginViewModel;
@@ -81,13 +82,17 @@ public class LoginActivity extends AppCompatActivity {
                 //Se senha e nome errados retorna -1
                 if (index != -1){
 
-                    Intent intent = new Intent();
+                    Intent intent = new Intent(v.getContext(), TelaPrincipal.class);
                     intent.putExtra("index", index);
+                    startActivity(intent);
 
                 }else{
 
+<<<<<<< HEAD
                     Snackbar.make(v, "Verifique suas informações! ", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
+=======
+>>>>>>> 50b4abb23295106d24b793f181c3bf9645887d28
 
                 }
 
