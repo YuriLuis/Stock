@@ -39,9 +39,6 @@ public class LoginActivity extends AppCompatActivity {
     RegistrosVendedor rv;
     Login login;
 
-
-
-
     RelativeLayout rellay1;
 
     Handler handler = new Handler();
