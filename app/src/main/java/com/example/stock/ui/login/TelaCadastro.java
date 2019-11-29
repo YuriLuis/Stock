@@ -1,4 +1,4 @@
-package com.example.stock;
+package com.example.stock.ui.login;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,12 +12,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import com.example.stock.R;
+import com.example.stock.data.Classes.Produto;
+import com.example.stock.data.Classes.RegistrosProduto;
+
 public class TelaCadastro extends AppCompatActivity {
 
     AlertDialog alerta;
     AlertDialog alerta2;
     Button btnCadastrar;
     EditText txtProduto, txtPrice, txtQtd, txtDesc;
+    RegistrosProduto rp;
+
+    Produto produto;
 
 
     private void alert() {
@@ -27,6 +34,9 @@ public class TelaCadastro extends AppCompatActivity {
         builder.setTitle("StockSys");
         //define a mensagem
         builder.setMessage("\n » Produto cadastrado!");
+
+        rp.addDado(cadastrarProduto());
+
         //cria o AlertDialog
         alerta = builder.create();
         //Exibe
@@ -67,6 +77,7 @@ public class TelaCadastro extends AppCompatActivity {
         txtPrice = findViewById(R.id.txtPrice);
         txtDesc = findViewById(R.id.txtDesc);
         txtQtd = findViewById(R.id.txtQtd);
+        rp = findViewById()
 
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
@@ -83,11 +94,7 @@ public class TelaCadastro extends AppCompatActivity {
                 } else {
                     alerta();
                 }
-
-                txtProduto.setText("");
-                txtPrice.setText("");
-                txtDesc.setText("");
-                txtQtd.setText("");
+                    limpaCampos();
             }
         });
 
@@ -95,5 +102,27 @@ public class TelaCadastro extends AppCompatActivity {
 
     }
 
+    public void limpaCampos(){
 
+        txtProduto.setText("");
+        txtPrice.setText("");
+        txtDesc.setText("");
+        txtQtd.setText("");
+    }
+
+    public Produto cadastrarProduto(){
+
+        String nomeProduto = String.valueOf(txtProduto.getText());
+        String precoProdutoString = String.valueOf(txtPrice.getText());
+        String quantidadeSttring = String.valueOf(txtQtd.getText());
+        String descricao = String.valueOf(txtDesc.getText());
+
+        Float precoProduto = Float.valueOf(precoProdutoString);
+        Float quantidade = Float.valueOf(quantidadeSttring);
+
+        produto = new Produto(nomeProduto,descricao,precoProduto,quantidade);
+
+
+        return produto;
+    }
 }

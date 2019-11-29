@@ -87,13 +87,8 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 }else{
-
-<<<<<<< HEAD
                     Snackbar.make(v, "Verifique suas informações! ", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
-=======
->>>>>>> 50b4abb23295106d24b793f181c3bf9645887d28
-
                 }
 
             }
