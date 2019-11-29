@@ -30,6 +30,7 @@ import com.example.stock.data.Classes.Login;
 import com.example.stock.data.Classes.RegistrosVendedor;
 import com.example.stock.ui.login.LoginViewModel;
 import com.example.stock.ui.login.LoginViewModelFactory;
+import com.google.android.material.snackbar.Snackbar;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
     Button entrar;
     RegistrosVendedor rv;
     Login login;
+
+
 
 
     RelativeLayout rellay1;
@@ -69,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 String nomeVendedor = String.valueOf(nome.getText());
                 String senhaVendedor =  String.valueOf(senha.getText());
 
@@ -84,6 +88,9 @@ public class LoginActivity extends AppCompatActivity {
                     intent.putExtra("index", index);
 
                 }else{
+
+                    Snackbar.make(v, "Verifique suas informações! ", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
 
                 }
 
