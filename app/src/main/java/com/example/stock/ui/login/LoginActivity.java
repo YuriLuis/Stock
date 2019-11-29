@@ -26,10 +26,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.stock.R;
+import com.example.stock.TelaPrincipal;
 import com.example.stock.data.Classes.Login;
 import com.example.stock.data.Classes.RegistrosVendedor;
 import com.example.stock.ui.login.LoginViewModel;
 import com.example.stock.ui.login.LoginViewModelFactory;
+import com.google.android.material.snackbar.Snackbar;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -80,10 +82,12 @@ public class LoginActivity extends AppCompatActivity {
                 //Se senha e nome errados retorna -1
                 if (index != -1){
 
-                    Intent intent = new Intent();
+                    Intent intent = new Intent(v.getContext(), TelaPrincipal.class);
                     intent.putExtra("index", index);
+                    startActivity(intent);
 
                 }else{
+
 
                 }
 
