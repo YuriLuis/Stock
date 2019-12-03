@@ -1,4 +1,4 @@
-package com.example.stock;
+package com.example.stock.telas;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;

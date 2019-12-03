@@ -1,36 +1,20 @@
-package com.example.stock.ui.login;
-
-import android.app.Activity;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+package com.example.stock.telas;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Handler;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.stock.R;
-import com.example.stock.TelaPrincipal;
+import com.example.stock.telas.TelaPrincipal;
 import com.example.stock.data.Classes.Login;
 import com.example.stock.data.Classes.RegistrosVendedor;
-import com.example.stock.ui.login.LoginViewModel;
-import com.example.stock.ui.login.LoginViewModelFactory;
 import com.google.android.material.snackbar.Snackbar;
 
 public class LoginActivity extends AppCompatActivity {
