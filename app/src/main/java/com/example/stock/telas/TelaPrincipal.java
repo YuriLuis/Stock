@@ -1,7 +1,8 @@
-package com.example.stock;
+package com.example.stock.telas;
 
 import android.os.Bundle;
 
+import com.example.stock.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 

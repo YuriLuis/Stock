@@ -17,7 +17,7 @@ public class Login {
         ArrayList<Vendedor> auxVendedores = registrosVendedor.getVendedores();
         Vendedor v;
 
-        for (int i = 0; i <= auxVendedores.size(); i++){
+        for (int i = 0; i < auxVendedores.size(); i++){
 
             v = auxVendedores.get(i);
 
