@@ -52,29 +52,29 @@ public class TelaVendedor extends AppCompatActivity {
             public void onClick(View view) {
                 alert();
 
+                String nomeVend = String.valueOf(nomeVendedor.getText()).trim();
+                String senhaVend = String.valueOf(senha.getText()).trim();
+
                 // Criando um novo vendedor
-                Vendedor vendedor = new Vendedor(String.valueOf(nomeVendedor.getText()),
-                        String.valueOf(senha.getText()));
+                Vendedor vendedor = new Vendedor((nomeVend),(senhaVend));
 
                 RegistrosVendedor rv = RegistrosVendedor.getRegistrosVendedor();
 
-                if (nomeVendedor.getText().toString().trim().equals("")
+                if (nomeVendedor.getText().equals("")
                         && nomeVendedor.getText() != null && nomeVendedor.getText().length() < 6){
 
                     Snackbar.make(nomeVendedor, "Digite um nome valido, min 6 caracteres  ",
                             Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
-                    return;
                 }
 
-                if (senha.getText().toString().trim().equals("")
+                if (senha.getText().equals("")
                         && senha.getText() != null && senha.getText().length() < 4){
 
                     Snackbar.make(nomeVendedor, "Digite uma senha valida, min 4 numeros   ",
                             Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
 
-                    return;
                 }
 
                 rv.addDado(vendedor);
