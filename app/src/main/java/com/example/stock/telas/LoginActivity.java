@@ -71,8 +71,18 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 }else{
+<<<<<<< Updated upstream:app/src/main/java/com/example/stock/telas/LoginActivity.java
                     Snackbar.make(v, "Verifique suas informações! ", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
+=======
+
+
+                    Snackbar.make(v, "Verifique suas informações! ", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+
+
+
+>>>>>>> Stashed changes:app/src/main/java/com/example/stock/ui/login/LoginActivity.java
                 }
 
             }
