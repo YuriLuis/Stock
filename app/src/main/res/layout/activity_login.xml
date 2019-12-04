@@ -17,18 +17,17 @@
         android:layout_centerInParent="true"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="150dp"
-        android:layout_marginRight="40dp">
+        android:layout_marginRight="40dp"
+        android:gravity="center">
 
 
         <ImageView
 
             android:id="@+id/imgView_logo"
-            android:layout_width="197dp"
+            android:layout_width="match_parent"
             android:layout_height="259dp"
-            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="-11dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="0dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/logo" />
@@ -38,11 +37,11 @@
             android:id="@+id/rellay1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_below="@+id/imgView_logo"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="-39dp"
-            android:layout_marginEnd="0dp">
+            android:layout_marginEnd="0dp"
+            android:visibility="gone">
 
 
             <LinearLayout
@@ -100,12 +99,12 @@
 
                     <EditText
                         android:id="@+id/loginTvSenha"
-                        android:inputType="textPassword"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/et_bg"
                         android:fontFamily="sans-serif-medium"
+                        android:inputType="textPassword"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
                         android:textColor="@color/colorPrimaryDark"
