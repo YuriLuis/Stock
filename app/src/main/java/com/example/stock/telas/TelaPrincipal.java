@@ -55,12 +55,6 @@ public class TelaPrincipal extends AppCompatActivity implements NavigationView.O
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-<<<<<<< HEAD:app/src/main/java/com/example/stock/TelaPrincipal.java
-
-=======
-        navigationView.setNavigationItemSelectedListener(this);
->>>>>>> 4a441cdc2a730740d273ad8f0e80228843615259:app/src/main/java/com/example/stock/telas/TelaPrincipal.java
     }
 
     @Override
