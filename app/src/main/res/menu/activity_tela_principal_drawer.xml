@@ -7,7 +7,8 @@
         <item
             android:id="@+id/nav_principal"
             android:icon="@drawable/icons8stock24"
-            android:title="@string/menu_principal" />
+            android:title="@string/menu_principal"
+            />
 
         <item
             android:id="@+id/nav_sobre"
@@ -17,6 +18,7 @@
             android:id="@+id/nav_vendedores"
             android:icon="@drawable/icons8pessoastrabalhandojuntas48"
             android:title="@string/menu_vendedores" />
+
     </group>
 
 
