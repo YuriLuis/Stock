@@ -1,11 +1,8 @@
 package com.example.stock.telas;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toolbar;
 
 import com.example.stock.R;
+import com.example.stock.data.Classes.Autenticador;
 import com.example.stock.data.Classes.RegistrosVendedor;
 import com.example.stock.data.Classes.Vendedor;
 import com.google.android.material.snackbar.Snackbar;
@@ -60,18 +58,25 @@ public class TelaVendedor extends AppCompatActivity {
 
                 RegistrosVendedor rv = RegistrosVendedor.getRegistrosVendedor();
 
-                if (nomeVendedor.getText().equals("")
-                        && nomeVendedor.getText() != null && nomeVendedor.getText().length() < 6){
+                if (Autenticador.verificaVazio(nomeVend)
+                        && Autenticador.verificaVazioOuBranco(nomeVend)
+                        && Autenticador.verificaTamanho(nomeVend)) {
 
-                    Snackbar.make(nomeVendedor, "Digite um nome valido, min 6 caracteres  ",
+                }else{
+
+                    Snackbar.make(nomeVendedor, "Digite um nome valido, min 5 caracteres  ",
                             Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
 
-                if (senha.getText().equals("")
-                        && senha.getText() != null && senha.getText().length() < 4){
+                if (Autenticador.verificaVazio(senhaVend)
+                        && Autenticador.verificaVazioOuBranco(senhaVend)
+                        && Autenticador.verificaTamanhoSenha(senhaVend) )
+                       {
 
-                    Snackbar.make(nomeVendedor, "Digite uma senha valida, min 4 numeros   ",
+                }else {
+
+                    Snackbar.make(nomeVendedor, "Digite uma senha valida, min 6 digitos   ",
                             Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
 
