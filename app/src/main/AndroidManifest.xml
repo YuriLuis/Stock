@@ -14,15 +14,15 @@
             android:label="@string/title_activity_tela_principal"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
-<<<<<<< HEAD
-        </activity>
-=======
+
+
+
         <activity
             android:name=".telas.TelaVendedor"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
 
->>>>>>> 87001ed605872b87ad5f7e1e02fd2ab26d24f2dd
+
         <activity
             android:name=".telas.TelaCadastro"
             android:theme="@style/AppTheme.NoActionBar"></activity>
