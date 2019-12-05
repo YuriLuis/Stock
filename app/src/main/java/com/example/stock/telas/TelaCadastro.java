@@ -14,6 +14,7 @@ import android.widget.Toolbar;
 
 import com.example.stock.R;
 import com.example.stock.data.Classes.Produto;
+import com.example.stock.data.Classes.Registros;
 import com.example.stock.data.Classes.RegistrosProduto;
 
 public class TelaCadastro extends AppCompatActivity {
@@ -33,8 +34,7 @@ public class TelaCadastro extends AppCompatActivity {
         builder.setTitle("StockSys");
         //define a mensagem
         builder.setMessage("\n » Produto cadastrado!");
-
-        rp.addDado(cadastrarProduto());
+        
 
         //cria o AlertDialog
         alerta = builder.create();
@@ -77,17 +77,28 @@ public class TelaCadastro extends AppCompatActivity {
         txtDesc = findViewById(R.id.txtDesc);  //Instanciando o editText
         txtQtd = findViewById(R.id.txtQtd);  //Instanciando o editText
 
+        rp = RegistrosProduto.getRegistrosProduto();
+
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if         ((String.valueOf(txtProduto.getText()).length() > 0 )   // Verificando se o campo tem algo digitado
-                        && (String.valueOf(txtPrice.getText()).length() > 0 )   // Verificando se o campo tem algo digitado
-                        && (String.valueOf(txtDesc.getText()).length() > 0 )   // Verificando se o campo tem algo digitado
-                        && (String.valueOf(txtQtd.getText()).length() > 0 ))   // Verificando se o campo tem algo digitado
+                String nome = (String.valueOf(txtProduto.getText()));
+                String preco = (String.valueOf(txtPrice.getText()));
+                String desc = (String.valueOf(txtDesc.getText()));
+                String qtd = (String.valueOf(txtQtd.getText()));
+
+                if         ((nome.length() > 0 )// Verificando se o campo tem algo digitado
+                        && (preco.length() > 0 )   // Verificando se o campo tem algo digitado
+                        && (desc.length() > 0 )   // Verificando se o campo tem algo digitado
+                        && (qtd.length() > 0 ))   // Verificando se o campo tem algo digitado
                 {
                     btnCadastrar.setActivated(true); // Ativando o botão caso tenha texto dentro.
-                    Produto p = new Produto();
+                    Produto p = new Produto(nome, desc, Float.parseFloat(preco),
+                            Float.parseFloat(qtd));
+
+                    rp.addDado(p);
+
                     alert();
                 } else {
                     alerta();

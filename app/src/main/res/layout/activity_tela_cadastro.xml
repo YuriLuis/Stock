@@ -57,6 +57,7 @@
 
         <EditText
             android:id="@+id/txtQtd"
+            android:inputType="numberDecimal"
             android:layout_width="249dp"
             android:layout_height="36dp"
             android:layout_marginStart="77dp"
@@ -77,6 +78,7 @@
 
         <EditText
             android:id="@+id/txtPrice"
+            android:inputType="numberDecimal"
             android:layout_width="249dp"
             android:layout_height="36dp"
             android:layout_marginStart="77dp"
