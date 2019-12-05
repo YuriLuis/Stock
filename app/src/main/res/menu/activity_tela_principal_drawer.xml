@@ -21,11 +21,6 @@
             android:icon="@drawable/icons8sobre64"
             android:title="Carrinho" />
 
-        <item
-            android:id="@+id/nav_sobre"
-            android:icon="@drawable/icons8sobre64"
-            android:title="@string/menu_sobre" />
-
     </group>
 
 
