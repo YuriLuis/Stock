@@ -11,7 +11,7 @@ public class RegistrosVendedor implements Registros {
 
         vendedores = new ArrayList<Vendedor>();
 
-        vendedores.add(new Vendedor("admin", "admin"));
+        vendedores.add(new Vendedor("", ""));
     }
 
     public static RegistrosVendedor getRegistrosVendedor() {

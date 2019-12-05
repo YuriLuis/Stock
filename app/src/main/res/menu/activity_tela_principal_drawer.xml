@@ -11,13 +11,14 @@
             />
 
         <item
-            android:id="@+id/nav_sobre"
-            android:icon="@drawable/icons8sobre64"
-            android:title="@string/menu_sobre" />
-        <item
-            android:id="@+id/nav_vendedores"
+            android:id="@+id/nav_cadastrar_vendedor"
             android:icon="@drawable/icons8pessoastrabalhandojuntas48"
-            android:title="@string/menu_vendedores" />
+            android:title="Cadastrar vendedor" />
+
+        <item
+            android:id="@+id/nav_carrinho"
+            android:icon="@drawable/icons8sobre64"
+            android:title="Carrinho" />
 
     </group>
 

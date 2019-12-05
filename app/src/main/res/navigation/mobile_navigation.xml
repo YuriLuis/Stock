@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_sobre"
+        android:id="@+id/nav_carrinho"
         android:name="com.example.stock.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_sobre"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
-        android:id="@+id/nav_vendedores"
+        android:id="@+id/nav_cadastrar_vendedor"
         android:name="com.example.stock.ui.tools.ToolsFragment"
         android:label="@string/menu_vendedores"
         tools:layout="@layout/fragment_tools" />

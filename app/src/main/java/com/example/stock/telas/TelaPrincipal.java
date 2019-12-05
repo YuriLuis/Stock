@@ -4,8 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.stock.R;
+import com.example.stock.TelaCarinho;
+import com.example.stock.ui.slideshow.SlideshowViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.MenuItem;
 import android.view.View;
@@ -47,8 +48,8 @@ public class TelaPrincipal extends AppCompatActivity implements NavigationView.O
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_principal, R.id.nav_sobre,
-                R.id.nav_vendedores)
+                R.id.nav_principal, R.id.nav_carrinho,
+                R.id.nav_cadastrar_vendedor)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -80,9 +81,14 @@ public class TelaPrincipal extends AppCompatActivity implements NavigationView.O
 
         //o id tem que ser igual ao do item do menu
         //ai é só botar dentro do if oq fazer
-        if (id == R.id.nav_vendedores){
+        if (id == R.id.nav_cadastrar_vendedor){
 
             startActivity(new Intent(this, TelaVendedor.class));
+        }
+        if (id == R.id.nav_carrinho){
+
+            startActivity(new Intent(this, TelaCarinho.class));
+
         }
 
         return false;
