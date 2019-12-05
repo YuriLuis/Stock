@@ -11,11 +11,8 @@
             />
 
         <item
-<<<<<<< HEAD
+
             android:id="@+id/nav_cadastrar_vendedor"
-=======
-            android:id="@+id/nav_vendedores"
->>>>>>> d1fe45bab6ebe198f5de11d5cf23993c0e4fbd64
             android:icon="@drawable/icons8pessoastrabalhandojuntas48"
             android:title="Cadastrar vendedor" />
 
