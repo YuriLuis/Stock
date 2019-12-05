@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.stock.R;
+import com.example.stock.data.Classes.RegistrosProduto;
+import com.example.stock.recyclerviews.adapter.AdapterProdutos;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import android.view.MenuItem;
@@ -22,12 +24,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 
 public class TelaPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private RecyclerView rv;
+    private RegistrosProduto rp;
+    private AdapterProdutos adapterProdutos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,9 @@ public class TelaPrincipal extends AppCompatActivity implements NavigationView.O
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+
+        rv = (RecyclerView) findViewById(R.id.recyclerView);
+        rp = RegistrosProduto.getRegistrosProduto();
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +66,15 @@ public class TelaPrincipal extends AppCompatActivity implements NavigationView.O
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        adapterProdutos = new AdapterProdutos(rp.getDados(), this);
+        rv.setAdapter(adapterProdutos);
+        rv.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override

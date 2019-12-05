@@ -62,4 +62,9 @@ public class RegistrosProduto implements Registros {
 
         return produtos.get(index);
     }
+
+    public ArrayList getDados(){
+
+       return this.produtos;
+    }
 }

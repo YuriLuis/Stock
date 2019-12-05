@@ -7,7 +7,8 @@
     tools:context=".telas.TelaCarinho">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        tools:listitem="@layout/adapter_lista"
+        android:id="@+id/recyclerViewCarrinho"
         android:layout_width="415dp"
         android:layout_height="593dp"
         android:layout_marginTop="57dp"

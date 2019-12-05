@@ -87,6 +87,7 @@ public class TelaCadastro extends AppCompatActivity {
                         && (String.valueOf(txtQtd.getText()).length() > 0 ))   // Verificando se o campo tem algo digitado
                 {
                     btnCadastrar.setActivated(true); // Ativando o botão caso tenha texto dentro.
+                    Produto p = new Produto();
                     alert();
                 } else {
                     alerta();
