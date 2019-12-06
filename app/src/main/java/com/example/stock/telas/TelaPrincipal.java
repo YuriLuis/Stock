@@ -29,6 +29,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 
+/**
+ * Autor: Yuri Luis Garcia Pereira   Versão 0.1.0
+ *
+ * Tem o menu do aplicativo e a lista de produtos cadastrados!
+ *
+ * */
 public class TelaPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
