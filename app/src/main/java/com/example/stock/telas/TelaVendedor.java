@@ -1,3 +1,9 @@
+/**
+ * @author: Guilherme Vargas <guilherme.v@hbsis.com.br>
+ * @author: Yuri Martins <yuri.pereira@hbsis.com.br>
+ */
+
+
 package com.example.stock.telas;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,12 +22,20 @@ import com.example.stock.data.Classes.Vendedor;
 import com.google.android.material.snackbar.Snackbar;
 
 public class TelaVendedor extends AppCompatActivity {
+
+    /**
+     * Criando os atributos da classe.
+     */
+
     AlertDialog alerta;
     Button btnCadastra;
     EditText nomeVendedor;
     EditText senha;
     Toolbar tool;
 
+    /**
+     * Criação do método alert() que irá mostrar uma mensagem na tela que o vendedor foi salvo.
+     */
 
     private void alert() {
         //Cria o gerador do AlertDialog
@@ -36,15 +50,30 @@ public class TelaVendedor extends AppCompatActivity {
         alerta.show();
     }
 
+    /**
+     * Setando o conteúdo da View.
+     * Seta o título da View.
+     * Declara as Id dos componentes.
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_vendedor);
         setTitle("Cadastrar vendedor");
-        btnCadastra =  findViewById(R.id.btnSalvar);
+        btnCadastra = findViewById(R.id.btnSalvar);
         nomeVendedor = findViewById(R.id.edNome);
         senha = findViewById(R.id.etPassword);
         btnCadastra.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             * Método chama o método alert.
+             * Retorna os dados do vendedor (nomeVend, senhaVend).
+             * Após isso ele cria um novo vendedor e cria um RegistroVendedor (rv)
+             * e puxa o método getRegistrosVendedor() que registra as informações.
+             * entra no if para fazer as verificações de dados.
+             * Depois do if ele adiciona o vendedor e limpa os campos de dados.
+             */
 
             @Override
             public void onClick(View view) {
@@ -54,7 +83,7 @@ public class TelaVendedor extends AppCompatActivity {
                 String senhaVend = String.valueOf(senha.getText()).trim();
 
                 // Criando um novo vendedor
-                Vendedor vendedor = new Vendedor((nomeVend),(senhaVend));
+                Vendedor vendedor = new Vendedor((nomeVend), (senhaVend));
 
                 RegistrosVendedor rv = RegistrosVendedor.getRegistrosVendedor();
 
@@ -62,7 +91,7 @@ public class TelaVendedor extends AppCompatActivity {
                         && Autenticador.verificaVazioOuBranco(nomeVend)
                         && Autenticador.verificaTamanho(nomeVend)) {
 
-                }else{
+                } else {
 
                     Snackbar.make(nomeVendedor, "Digite um nome valido, min 5 caracteres  ",
                             Snackbar.LENGTH_LONG)
@@ -71,10 +100,9 @@ public class TelaVendedor extends AppCompatActivity {
 
                 if (Autenticador.verificaVazio(senhaVend)
                         && Autenticador.verificaVazioOuBranco(senhaVend)
-                        && Autenticador.verificaTamanhoSenha(senhaVend) )
-                       {
+                        && Autenticador.verificaTamanhoSenha(senhaVend)) {
 
-                }else {
+                } else {
 
                     Snackbar.make(nomeVendedor, "Digite uma senha valida, min 6 digitos   ",
                             Snackbar.LENGTH_LONG)
@@ -87,14 +115,9 @@ public class TelaVendedor extends AppCompatActivity {
                 senha.setText("");
 
 
-
-
-
-
             }
 
         });
-
 
 
     }
