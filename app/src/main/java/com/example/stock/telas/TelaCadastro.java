@@ -1,3 +1,8 @@
+/**
+ @author: Leandro Schepers Compolt <leandro.compolt@hbsis.com.br>
+ @author: Yuri Martins <yuri.pereira@hbsis.com.br>
+ */
+
 package com.example.stock.telas;
 
 import androidx.appcompat.app.AlertDialog;
@@ -14,10 +19,13 @@ import android.widget.Toolbar;
 
 import com.example.stock.R;
 import com.example.stock.data.Classes.Produto;
-import com.example.stock.data.Classes.Registros;
 import com.example.stock.data.Classes.RegistrosProduto;
 
 public class TelaCadastro extends AppCompatActivity {
+
+    /**
+     * Criando os atributos da classe
+     */
 
     AlertDialog alerta;
     AlertDialog alerta2;
@@ -27,6 +35,13 @@ public class TelaCadastro extends AppCompatActivity {
     Produto produto;
 
 
+    /**
+     * Aqui estamos criando um alerta, através de um método, que pde ser chamado a qualquer momento
+     * Temos o alert que é 'Produto cadastrado'
+     * E temos o alerta que é 'Dados inválidos'
+     */
+
+
     private void alert() {
         //Cria o gerador do AlertDialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -34,8 +49,6 @@ public class TelaCadastro extends AppCompatActivity {
         builder.setTitle("StockSys");
         //define a mensagem
         builder.setMessage("\n » Produto cadastrado!");
-        
-
         //cria o AlertDialog
         alerta = builder.create();
         //Exibe
@@ -55,13 +68,22 @@ public class TelaCadastro extends AppCompatActivity {
         alerta2.show();
     }
 
+    /**
+     * Setando o layout parecido com o da tela login
+     * Setando o titulo da tela para Cadastrar produto
+     * Transformando as views em objetos
+     * Fazendo a verificação se já texto no campos
+     * Fazendo o cadastro dos produtos
+     * Limpando os campos, após inserção
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastro);
-        setTitle("Cadastrar produto");    // Setando o título
+        setTitle("Cadastrar produto");
         btnCadastrar =  findViewById(R.id.btnCadastrar);
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
 
@@ -72,38 +94,27 @@ public class TelaCadastro extends AppCompatActivity {
 
         });
 
-        txtProduto = findViewById(R.id.txtProduto);  //Instanciando o editText
-        txtPrice = findViewById(R.id.txtPrice);  //Instanciando o editText
-        txtDesc = findViewById(R.id.txtDesc);  //Instanciando o editText
-        txtQtd = findViewById(R.id.txtQtd);  //Instanciando o editText
-
-        rp = RegistrosProduto.getRegistrosProduto();
+        txtProduto = findViewById(R.id.txtProduto);
+        txtPrice = findViewById(R.id.txtPrice);
+        txtDesc = findViewById(R.id.txtDesc);
+        txtQtd = findViewById(R.id.txtQtd);
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String nome = (String.valueOf(txtProduto.getText()));
-                String preco = (String.valueOf(txtPrice.getText()));
-                String desc = (String.valueOf(txtDesc.getText()));
-                String qtd = (String.valueOf(txtQtd.getText()));
-
-                if         ((nome.length() > 0 )// Verificando se o campo tem algo digitado
-                        && (preco.length() > 0 )   // Verificando se o campo tem algo digitado
-                        && (desc.length() > 0 )   // Verificando se o campo tem algo digitado
-                        && (qtd.length() > 0 ))   // Verificando se o campo tem algo digitado
+                if         ((String.valueOf(txtProduto.getText()).length() > 0 )
+                        && (String.valueOf(txtPrice.getText()).length() > 0 )
+                        && (String.valueOf(txtDesc.getText()).length() > 0 )
+                        && (String.valueOf(txtQtd.getText()).length() > 0 ))
                 {
-                    btnCadastrar.setActivated(true); // Ativando o botão caso tenha texto dentro.
-                    Produto p = new Produto(nome, desc, Float.parseFloat(preco),
-                            Float.parseFloat(qtd));
-
-                    rp.addDado(p);
-
+                    btnCadastrar.setActivated(true);
+                    rp.addDado(cadastrarProduto());
                     alert();
                 } else {
                     alerta();
                 }
-                    limpaCampos();
+                limpaCampos();
             }
         });
 
@@ -111,13 +122,23 @@ public class TelaCadastro extends AppCompatActivity {
 
     }
 
-    public void limpaCampos(){ // Função que liga os campos após a inserção de dados
+    /**
+     * Método que limpa os campos após o cadastro.
+     */
+
+    public void limpaCampos(){
 
         txtProduto.setText("");
         txtPrice.setText("");
         txtDesc.setText("");
         txtQtd.setText("");
     }
+
+    /**
+     * Criando as variaveis que armazenam os dados e convertem para seu tipo primitivo.
+     * Criando um novo produto com as caracteristicas.
+     * O método retorna um produto.
+     */
 
     public Produto cadastrarProduto(){
 
