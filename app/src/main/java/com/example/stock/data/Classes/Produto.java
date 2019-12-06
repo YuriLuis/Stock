@@ -1,4 +1,11 @@
 package com.example.stock.data.Classes;
+/*
+    Representação de um produto. O atributo qtd é a
+    quantidade disponível para uso.
+
+    @version 0.1.0
+    @Author Diego
+     */
 
 public class Produto {
 
@@ -17,12 +24,30 @@ public class Produto {
     public Produto() {
 
     }
+    /*
+    Este método diminui a quantidade dispoível do produto.
+    Será chamado na classe Item.
 
+    @param qtd
+    @return void
+
+    @version 0.1.0
+    @Author Diego
+     */
     public void diminuirQtd(float qtd) {
 
         this.qtd -= qtd;
     }
 
+    /*
+    Este método aumenta a quantia disponível do produto.
+
+    @param qtd
+    @return void
+
+    @version 0.1.0
+    @Author Diego
+     */
     public void addQtd(int qtd) {
 
         this.qtd += qtd;
