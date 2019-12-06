@@ -1,3 +1,8 @@
+/**
+ * Representação de um vendedor no sistema,
+ * será utilizado para guardar informações de login.
+ */
+
 package com.example.stock.data.Classes;
 
 public class Vendedor {
@@ -10,7 +15,7 @@ public class Vendedor {
         this.senha = senha;
     }
 
-    public Vendedor(){
+    public Vendedor() {
 
     }
 
