@@ -143,12 +143,10 @@ public class TelaCadastro extends AppCompatActivity {
     public Produto cadastrarProduto(){
 
         String nomeProduto = String.valueOf(txtProduto.getText());
-        String precoProdutoString = String.valueOf(txtPrice.getText());
-        String quantidadeSttring = String.valueOf(txtQtd.getText());
+        Float precoProduto = Float.valueOf(String.valueOf(txtPrice.getText()));
+        Float quantidade = Float.valueOf(String.valueOf(txtQtd.getText()));
         String descricao = String.valueOf(txtDesc.getText());
 
-        Float precoProduto = Float.valueOf(precoProdutoString);
-        Float quantidade = Float.valueOf(quantidadeSttring);
 
         produto = new Produto(nomeProduto,descricao,precoProduto,quantidade);
 

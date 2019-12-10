@@ -79,17 +79,17 @@ public class TelaVendedor extends AppCompatActivity {
             public void onClick(View view) {
                 alert();
 
-                String nomeVend = String.valueOf(nomeVendedor.getText()).trim();
-                String senhaVend = String.valueOf(senha.getText()).trim();
+                String nomeVend = String.valueOf(nomeVendedor.getText());
+                String senhaVend = String.valueOf(senha.getText());
 
                 // Criando um novo vendedor
-                Vendedor vendedor = new Vendedor((nomeVend), (senhaVend));
+                Vendedor vendedor = new Vendedor(nomeVend, senhaVend);
 
                 RegistrosVendedor rv = RegistrosVendedor.getRegistrosVendedor();
 
                 if (Autenticador.verificaVazio(nomeVend)
                         && Autenticador.verificaVazioOuBranco(nomeVend)
-                        && Autenticador.verificaTamanho(nomeVend)) {
+                        && Autenticador.verificaTamanhoSenha(senhaVend)) {
 
                 } else {
 

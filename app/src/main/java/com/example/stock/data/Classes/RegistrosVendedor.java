@@ -41,7 +41,7 @@ public class RegistrosVendedor implements Registros {
 
         vendedores = new ArrayList<Vendedor>();
 
-        vendedores.add(new Vendedor("", ""));
+        vendedores.add(new Vendedor("admin123", "admin123"));
     }
 
     /**
